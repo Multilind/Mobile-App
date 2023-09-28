@@ -20,7 +20,7 @@ export function BottomNavigation() {
         tabBarInactiveTintColor: DARK,
       }}
     >
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Map"
         options={{
           tabBarLabel: 'Mapa',
@@ -29,7 +29,7 @@ export function BottomNavigation() {
           ),
         }}
         component={MapScreen}
-      />
+      /> */}
       <Tab.Screen
         name="LanguageNavigator"
         options={{
