@@ -148,11 +148,11 @@ export function LanguageScreen() {
           </TouchableWithoutFeedback>
         </TouchableOpacity>
       </Modal>
-      <View>
+      <View style={{backgroundColor: 'white'}}>
         <View style={styles.container}>
           <Text
             style={{
-              marginTop: insets.top + 10,
+              marginTop: insets.top,
               fontFamily: MONTSERRAT_BOLD,
               fontSize: 30,
             }}
@@ -160,27 +160,22 @@ export function LanguageScreen() {
             Línguas Indígenas
           </Text>
         </View>
-        <View>
+        <View style={styles.filters}>
           <Input
             icon={
-              <Entypo
-                name="magnifying-glass"
-                size={30}
-                color={DARK_GRAY}
-                style={{ left: 10 }}
-              />
+              <View>
+                <Entypo
+                  name="magnifying-glass"
+                  size={30}
+                  color={DARK_GRAY}
+                  style={{ left: 10 }}
+                />
+              </View>
             }
-            inputContainerStyle={[
-              styles.searchBar,
-              {
-                top: insets.top + 20,
-              },
-            ]}
+            inputContainerStyle={[styles.searchBar]}
             placeholder="Pesquisar língua"
           />
-
           <TouchableOpacity
-            style={{ top: 15 }}
             onPress={() => {
               setVisib(true);
             }}
@@ -189,12 +184,12 @@ export function LanguageScreen() {
               name="filter"
               size={24}
               color={DARK_GRAY}
-              style={{ left: 350 }}
+              style={{ right: 10 }}
             />
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={{ top: 50 }}>{list()}</ScrollView>
+        <ScrollView>{list()}</ScrollView>
       </View>
     </>
   );

@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     margin: 1,
   },
   list: {
-    backgroundColor: 'white',
     borderRadius: 0,
     paddingVertical: 20,
     paddingHorizontal: 25,
@@ -26,22 +25,25 @@ const styles = StyleSheet.create({
   arrow: {
     paddingRight: 14,
   },
-
+  filters: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   container: {
-    height: 70,
+    height: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: 20
   },
   title: {
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 30,
-  },
-  iconglass: {
-    left: 10,
+    height: 100
   },
   searchBar: {
-    width: '90%',
+    width: 'auto',
     alignSelf: 'center',
+    padding: 10
   },
   modal: {
     top: '16%',

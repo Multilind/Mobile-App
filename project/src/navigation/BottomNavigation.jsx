@@ -6,7 +6,7 @@ import { PRIMARY_BLUE, DARK } from '../constants';
 import { LanguageNavigation } from './LanguageNavigation';
 
 const Tab = createBottomTabNavigator();
-export const BOTTOM_TAB_HEIGHT = 75;
+export const BOTTOM_TAB_HEIGHT = 100;
 
 export function BottomNavigation() {
   return (
