@@ -12,6 +12,7 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
+  console.log(language);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -58,15 +59,10 @@ export function LanguageInitialScreen() {
 
         <TouchableOpacity style={styles.info} textStyle={{ color: 'white' }}>
           <View style={styles.buttoninfo}>
-            <AntDesign name="infocirlce" size={24} color="white" />
+            <AntDesign name="infocircle" size={24} color="white" />
             <Text style={styles.infotext}> Mais informações</Text>
           </View>
         </TouchableOpacity>
-
-        <Button
-          style={styles.plusbutton}
-          icon={<AntDesign name="plus" size={24} color="blue" />}
-        ></Button>
       </View>
     </SafeAreaView>
   );
