@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { GoBack, TopBar, LanguageInfo, DictOrImage } from '../../components';
 import { Button } from '../../components';
 import styles from './styles';
-import dicionary from '../../assets/images/dicionary.png';
-import portraitimg from '../../assets/images/portrait.png';
+import { portraitImage, dictionaryImage } from '../../assets/images';
 
 export function LanguageInitialScreen() {
   const route = useRoute();
@@ -15,55 +15,31 @@ export function LanguageInitialScreen() {
   console.log(language);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity
-        style={styles.goback}
-        onPress={() => {
-          navigation.goBack();
-        }}
-      >
-        <AntDesign name="left" size={24} color="#B1B1B1" />
-      </TouchableOpacity>
+    <SafeAreaView>
+      <ScrollView>
+        <GoBack />
+        <TopBar>{language.nome}</TopBar>
+        <View style={styles.container}>
+          <LanguageInfo language={language} style={styles.LanguageInfo} />
 
-      <Text style={styles.title}>{language.name}</Text>
+          <View style={styles.Dict}>
+            <DictOrImage
+              style={styles.dictChildren}
+              language={language}
+              image={dictionaryImage}
+              navigate="Words"
+              text="Dicionário"
+            />
 
-      <View style={styles.textcontainer}>
-        <Text style={styles.firsttext}>
-          Tronco Linguistico: {language.troncolinguistico}
-        </Text>
-        <Text style={styles.sectext}>
-          Regiões Faladas: {language.regioesfaladas}
-        </Text>
-        <Text style={styles.thirdtext}>20% de falantes</Text>
-        <View style={styles.greypercentage}>
-          <View style={styles.yellowpercentage} />
+            <DictOrImage
+              language={language}
+              navigate="ImageWordScreen"
+              image={portraitImage}
+              text="Imagens"
+            />
+          </View>
         </View>
-      </View>
-
-      <View style={styles.buttonscontainer}>
-        <TouchableOpacity style={styles.dictionary}>
-          <View style={styles.flexview}>
-            <Image style={styles.img} source={dicionary} />
-            <Text style={styles.buttontext}>Dicionário</Text>
-          </View>
-          <AntDesign name="right" size={24} color="#B1B1B1" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.portrait}>
-          <View style={styles.flexview}>
-            <Image source={portraitimg} style={styles.img} />
-            <Text style={styles.buttontext}> Imagens</Text>
-          </View>
-          <AntDesign name="right" size={24} color="#B1B1B1" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.info} textStyle={{ color: 'white' }}>
-          <View style={styles.buttoninfo}>
-            <AntDesign name="infocircle" size={24} color="white" />
-            <Text style={styles.infotext}> Mais informações</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
