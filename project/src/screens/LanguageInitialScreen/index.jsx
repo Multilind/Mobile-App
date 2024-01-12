@@ -12,7 +12,6 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-  console.log(language);
 
   return (
     <SafeAreaView>
