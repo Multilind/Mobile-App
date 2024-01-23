@@ -30,12 +30,10 @@ export function WordsScreen() {
   //   getWords();
   // }, []);
 
-  console.log(content);
-
   const filteredWords = FilterListSearchWord(words, wordSearch);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <View style={{ marginBottom: 20 }}>
         <GoBack />
         <TopBar>Palavras</TopBar>

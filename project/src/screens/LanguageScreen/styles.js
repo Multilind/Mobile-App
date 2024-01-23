@@ -6,16 +6,16 @@ import {
 } from '../../constants';
 
 const styles = StyleSheet.create({
-  listcontainer: {
-    margin: 1,
-  },
   list: {
+    backgroundColor: 'white',
     borderRadius: 0,
-    paddingVertical: 20,
-    paddingHorizontal: 25,
+    padding: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    borderWidth: 1, 
+    borderTopColor: '#C4C4C4',
+    borderBottomColor: 'transparent'
   },
   textlist: {
     color: 'black',

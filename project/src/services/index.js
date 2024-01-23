@@ -1,0 +1,1 @@
+export { ImageWordService } from './imageWord';

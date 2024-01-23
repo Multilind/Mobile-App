@@ -3,5 +3,7 @@ export { DictOrImage } from './DictOrImage';
 export { TopBar } from './TopBar';
 export { GoBack } from './GoBack';
 export { LanguageInfo } from './LanguageInformation';
-export { Word } from './Word'
-export { SearchBar } from './SearchBar'
+export { Word } from './Word';
+export { SearchBar } from './SearchBar';
+export { WordMeaning } from './WordMeaning';
+export { ImageContainer } from './ImageContainer';

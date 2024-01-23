@@ -10,7 +10,7 @@ export const GoBack = ({ style }) => {
     <TouchableOpacity
       style={[styles.goback, style]}
       onPress={() => {
-        navigation.goBack();
+        navigation.goBack(null);
       }}
     >
       <AntDesign name="left" size={24} color="#B1B1B1" />
