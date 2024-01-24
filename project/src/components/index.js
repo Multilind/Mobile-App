@@ -7,3 +7,5 @@ export { Word } from './Word';
 export { SearchBar } from './SearchBar';
 export { WordMeaning } from './WordMeaning';
 export { ImageContainer } from './ImageContainer';
+export { LoadingOrEmptyMessage } from './LoadingOrEmptyMessage';
+export { Loading } from './Loading';

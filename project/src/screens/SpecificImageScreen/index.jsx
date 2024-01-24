@@ -32,6 +32,8 @@ export function SpecificImageScreen() {
   //   getImages();
   // }, []);
 
+  console.log(word);
+
   const list = () =>
     images.map((image, index) => (
       <View
