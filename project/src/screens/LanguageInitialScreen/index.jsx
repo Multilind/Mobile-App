@@ -17,7 +17,7 @@ export function LanguageInitialScreen() {
     <SafeAreaView>
       <ScrollView>
         <GoBack />
-        <TopBar>{language.nome}</TopBar>
+        <TopBar>{language.name}</TopBar>
         <View style={styles.container}>
           <LanguageInfo language={language} style={styles.LanguageInfo} />
 

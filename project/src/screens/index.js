@@ -5,3 +5,4 @@ export { LanguageInitialScreen } from './LanguageInitialScreen';
 export { WordsScreen } from './WordScreen'; 
 export { SpecificWordScreen } from './SpecificWordScreen';
 export { SpecificImageScreen } from './SpecificImageScreen'
+export { ImageWordScreen } from './ImageWordScreen'

@@ -52,7 +52,7 @@ export function WordsScreen() {
               emptyMessage={
                 filteredWords.length === 0 && wordSearch.length !== 0
                   ? 'Não há resultados para busca'
-                  : `Ainda não há palavras da língua ${language.nome} :(`
+                  : `Ainda não há palavras da língua ${language.name} :(`
               }
             />
           </View>

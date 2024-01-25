@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LanguageScreen, LanguageInitialScreen, WordsScreen, SpecificWordScreen, SpecificImageScreen } from '../screens';
+import { LanguageScreen, LanguageInitialScreen, WordsScreen, SpecificWordScreen, SpecificImageScreen, ImageWordScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +19,7 @@ export function LanguageNavigation() {
         name="SpecificImageScreen"
         component={SpecificImageScreen}
       />
+      <Stack.Screen name="ImageWordScreen" component={ImageWordScreen} />
     </Stack.Navigator>
   );
 }
