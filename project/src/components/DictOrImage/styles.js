@@ -3,7 +3,7 @@ import { MONTSERRAT_SEMIBOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   dictionary: {
-    height: 95,
+    height: 150,
     width: '100%',
     backgroundColor: 'white',
     flexDirection: 'row',

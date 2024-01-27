@@ -43,9 +43,9 @@ export function BottomNavigation() {
       <Tab.Screen
         name="Settings"
         options={{
-          tabBarLabel: 'Configurações',
+          tabBarLabel: 'Sobre',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-sharp" size={30} color={color} />
+            <Ionicons name="information-circle" size={35} color={color} />
           ),
         }}
         component={SettingsScreen}

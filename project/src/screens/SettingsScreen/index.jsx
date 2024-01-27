@@ -1,6 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { InfoCard } from '../../components'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from 'react-native';
+import styles from './styles';
 
 export function SettingsScreen() {
-  return <Text>SettingsScreen</Text>;
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <InfoCard styles={styles.infoCard}></InfoCard>
+        <InfoCard styles={styles.infoCard}></InfoCard>
+        <InfoCard styles={styles.infoCard}></InfoCard>
+        <InfoCard styles={styles.infoCard}></InfoCard>
+      </View>
+    </SafeAreaView>
+  );
 }
