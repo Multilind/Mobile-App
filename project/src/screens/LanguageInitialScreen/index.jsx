@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { GoBack, TopBar, LanguageInfo, DictOrImage } from '../../components';
-import { Button } from '../../components';
 import styles from './styles';
 import { portraitImage, dictionaryImage } from '../../assets/images';
 

@@ -25,7 +25,13 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 20,
-  }
+    width: 220,
+  },
+  flexview: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
 });
 
 export default styles;
