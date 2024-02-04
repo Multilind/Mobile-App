@@ -3,9 +3,9 @@ import { MONTSERRAT_BOLD } from '../../constants';
 
 const styles = StyleSheet.create({
     button: {
-        width: 386,
+        width: '90%',
         height: '22%',
-        borderRadius: 19,
+        borderRadius: 20,
         borderWidth: 1,
         borderColor: '#016949',
         backgroundColor: '#016949',
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 16
+        marginBottom: 16,
   },
   text: {
     color: '#fff',

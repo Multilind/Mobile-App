@@ -9,7 +9,7 @@ import {
   SearchBar,
   LoadingOrEmptyMessage,
 } from '../../components';
-import { FilterListSearchWord, sortMeaning } from '../../utils';
+import { FilterListSearchWord, sortName } from '../../utils';
 import styles from './styles';
 import Words from '../../words.json'
 
@@ -31,6 +31,7 @@ export function WordsScreen() {
   // }, []);
 
   const filteredWords = FilterListSearchWord(words, wordSearch);
+  console.log(sortName(filteredWords));
 
   return (
     <SafeAreaView style={{backgroundColor: 'white'}}>
@@ -57,7 +58,7 @@ export function WordsScreen() {
             />
           </View>
         }
-        data={sortMeaning(filteredWords)}
+        data={sortName(filteredWords)}
         renderItem={({ item }) => <Word word={item} />}
         keyExtractor={(item) => String(item.id_palavra)}
       />
