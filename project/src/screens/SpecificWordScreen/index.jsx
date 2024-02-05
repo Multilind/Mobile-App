@@ -24,63 +24,19 @@ export function SpecificWordScreen() {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ marginTop: insets.top - 15 }}>
         <GoBack />
-        <TopBar>{word.significado}</TopBar>
+        <TopBar>{word.nome}</TopBar>
       </View>
-      <WordMeaning />
-      <ScrollView
-        style={{
-          height: SCREEN_HEIGHT,
-        }}
-      >
-        <Text
-          style={{
-            marginTop: insets.top + 30,
-            marginLeft: insets.left + 26,
-            fontFamily: MONTSERRAT_BOLD,
-            fontSize: 23,
-          }}
-        >
-          Tradução
-        </Text>
-        <Text
-          style={{
-            marginTop: 10,
-            marginLeft: 26,
-            fontFamily: MONTSERRAT_SEMIBOLD,
-            fontSize: 20,
-          }}
-        >
-          {word.nome}
-        </Text>
-        <View
-          style={{
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            marginTop: 40,
-            marginBottom: 10,
-            flexDirection: 'row',
-            marginHorizontal: 26,
-            marginRight: 8,
-          }}
-        >
-          <TouchableOpacity
-            style={styles.buttom}
-            onPress={() => {
-              navigation.navigate('SpecificImageScreen', {
-                word,
-              });
-            }}
-          >
-            <View style={styles.buttonimage}>
-              <FontAwesome name="image" size={24} color="white" />
-              <Text style={styles.textbuttom}>Visualizar imagens</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <View style={styles.info}>
+        <WordMeaning title="Tradução (Português formal)"/>
+        <WordMeaning title="Tradução (Português indígena)*"/>
+        <Text style={styles.text}>*Português indígena é o nome que estamos usando para designar 
+          o português falado pelos povos indígenas, sendo diferente do 
+          português formal e do português brasileiro tendo em vista a 
+          forte influência da língua materna dos povos originais.</Text>
+      </View>
     </SafeAreaView>
   );
 }

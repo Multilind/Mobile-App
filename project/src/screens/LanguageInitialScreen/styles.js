@@ -33,16 +33,6 @@ const styles = StyleSheet.create({
     top: 80,
     width: '90%',
   },
-  portrait: {
-    height: 95,
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: 15,
-    paddingHorizontal: 20,
-    top: 15,
-  },
 
   plusbutton: {
     marginTop: '9%',

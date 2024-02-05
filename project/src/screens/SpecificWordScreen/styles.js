@@ -13,6 +13,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  info: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  text: {
+    padding: 24,
+    fontSize: 18,
+    fontFamily: MONTSERRAT_REGULAR,
+    textAlign: 'justify'
+  },
   title: {
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 30,
