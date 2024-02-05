@@ -45,7 +45,7 @@ export function BottomNavigation() {
         options={{
           tabBarLabel: 'Sobre',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="information-circle" size={35} color={color} />
+            <Ionicons name="information-circle" size={30} color={color} />
           ),
         }}
         component={SettingsScreen}
