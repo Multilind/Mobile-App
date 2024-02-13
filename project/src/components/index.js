@@ -10,3 +10,4 @@ export { ImageContainer } from './ImageContainer';
 export { LoadingOrEmptyMessage } from './LoadingOrEmptyMessage';
 export { Loading } from './Loading';
 export { InfoCard } from './CardInfo';
+export { Tab } from './Tab';

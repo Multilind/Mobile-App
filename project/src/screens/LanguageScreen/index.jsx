@@ -20,7 +20,7 @@ import {
 } from '../../constants';
 import styles from './styles';
 import Languages from '../../languages.json';
-import { Input } from '../../components';
+import { Input, Tab } from '../../components';
 
 export function LanguageScreen() {
   const { languages } = Languages;
@@ -148,7 +148,7 @@ export function LanguageScreen() {
           </TouchableWithoutFeedback>
         </TouchableOpacity>
       </Modal>
-      <View style={{backgroundColor: 'white'}}>
+      <View style={{ backgroundColor: 'white', flex: 1 }}>
         <View style={styles.container}>
           <Text
             style={{
@@ -160,7 +160,8 @@ export function LanguageScreen() {
             Línguas Indígenas
           </Text>
         </View>
-        <View style={styles.filters}>
+          <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" />
+        {/* <View style={styles.filters}>
           <Input
             icon={
               <View>
@@ -189,7 +190,7 @@ export function LanguageScreen() {
           </TouchableOpacity>
         </View>
 
-        <ScrollView>{list()}</ScrollView>
+        <ScrollView>{list()}</ScrollView> */}
       </View>
     </>
   );
