@@ -20,14 +20,20 @@ import {
 } from '../../constants';
 import styles from './styles';
 import Languages from '../../languages.json';
+import LanguagesPerFamily from '../../languagesPerFamily.json'
 import { Input, Tab } from '../../components';
+import { FilterListSearch } from '../../utils';
 
 export function LanguageScreen() {
   const { languages } = Languages;
+  const { languagesPerFamily } = LanguagesPerFamily;
   const navigation = useNavigation();
   const [lista, setLista] = useState(languages);
+  const [listFamily, setListLanguage] = useState(languagesPerFamily);
+  const [familySearch, setFamilySearch] = useState('');
+  const [expanded, setExpanded] = useState(false);
 
-  const list = () =>
+  const listLanguages = () =>
     lista.map((language) => (
       <View key={language.id} style={styles.listcontainer}>
         <TouchableOpacity
@@ -36,7 +42,7 @@ export function LanguageScreen() {
           }}
           style={styles.list}
         >
-          <Text style={styles.textlist}>{language.name}</Text>
+          <Text style={styles.textlist}>{language.nome}</Text>
           <AntDesign
             name="right"
             size={24}
@@ -47,18 +53,65 @@ export function LanguageScreen() {
       </View>
     ));
 
+  const listFamilies = () =>
+    FilterListSearch(listFamily, familySearch).map((tronco, index) => (
+      <View key={tronco.id_tronco} style={styles.listcontainer}>
+        <TouchableOpacity
+          style={styles.list}
+          onPress={() => setExpanded(expanded === index ? null : index)}
+        >
+          <View style={styles.familyLinguas}>
+            <Text style={styles.textlist}>{tronco.nome}</Text>
+            {tronco.linguas.length > 0 && (
+              <Text style={styles.qtdLinguas}>
+                {`${tronco.linguas.length} línguas`}
+              </Text>
+            )}
+          </View>
+          {tronco.linguas.length > 0 && (
+            <AntDesign
+              name={expanded === index ? 'up' : 'down'}
+              size={24}
+              color="#B1B1B1"
+              style={styles.arrow}
+            />
+          )}
+        </TouchableOpacity>
+
+        {expanded === index &&
+          tronco.linguas?.map((language) => (
+            <View key={language.id} style={styles.listcontainer}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('LanguageInitial', { language });
+                }}
+                style={styles.list}
+              >
+                <Text style={styles.textlist}>{language.nome}</Text>
+                <AntDesign
+                  name="right"
+                  size={24}
+                  color="#B1B1B1"
+                  style={styles.arrow}
+                />
+              </TouchableOpacity>
+            </View>
+          ))}
+      </View>
+    ));
+
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
   const listOrdenada = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => a.name.localeCompare(b.name));
+    newList.sort((a, b) => a.nome.localeCompare(b.nome));
     setLista(newList);
   };
   const listDesOrdenada = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => b.name.localeCompare(a.name));
+    newList.sort((a, b) => b.nome.localeCompare(a.nome));
     setLista(newList);
   };
   const listOrdenadaTronco = () => {
@@ -160,8 +213,7 @@ export function LanguageScreen() {
             Línguas Indígenas
           </Text>
         </View>
-          <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" />
-        {/* <View style={styles.filters}>
+        <View style={styles.filters}>
           <Input
             icon={
               <View>
@@ -189,8 +241,7 @@ export function LanguageScreen() {
             />
           </TouchableOpacity>
         </View>
-
-        <ScrollView>{list()}</ScrollView> */}
+        <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" firstView={listLanguages()} secondView={listFamilies()} />
       </View>
     </>
   );

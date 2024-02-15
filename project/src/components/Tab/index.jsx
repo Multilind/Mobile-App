@@ -3,16 +3,16 @@ import { View, Text, Dimensions } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import styles from './styles';
 
-export function Tab({firstTitle, secondTitle}) {
+export function Tab({ firstTitle, secondTitle, firstView, secondView }) {
     const FirstRoute = () => (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>First Route</Text>
+        <View>
+            {firstView}
         </View>
     );
 
     const SecondRoute = () => (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Second Route</Text>
+        <View>
+            {secondView}
         </View>
     );
 
@@ -50,4 +50,3 @@ export function Tab({firstTitle, secondTitle}) {
         />
     );
 };
-
