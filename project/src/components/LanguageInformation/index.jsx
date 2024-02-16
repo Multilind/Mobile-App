@@ -34,15 +34,12 @@ export function LanguageInfo({ language, style }) {
   //   ));
   return (
     <View style={[styles.textcontainer, style]}>
-      {language?.nomes_alternativos && (
-        <Text style={styles.firsttext}>
-          Nome(s) Alternativos: {language?.nomes_alternativos}
-        </Text>
-      )}
+      <Text style={styles.firsttext}>
+        Tronco Linguístico: {language?.familia?.nome ?? 'Isolada'}
+      </Text>
       <Text style={styles.firsttext}>
         Família Linguística: {language?.tronco?.nome ?? 'Isolada'}
       </Text>
-      {/* <View style={{ top: '2%' }}>{list()}</View> */}
     </View>
   );
 }

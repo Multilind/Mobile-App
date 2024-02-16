@@ -15,7 +15,7 @@ export function LanguageInitialScreen() {
     <SafeAreaView>
       <ScrollView>
         <GoBack />
-        <TopBar>{language.name}</TopBar>
+        <TopBar>{language.nome}</TopBar>
         <View style={styles.container}>
           <LanguageInfo language={language} style={styles.LanguageInfo} />
 
@@ -26,13 +26,16 @@ export function LanguageInitialScreen() {
               image={dictionaryImage}
               navigate="Words"
               text="Dicionário"
+              color="#016949"
             />
 
             <DictOrImage
+              style={styles.imageChildren}
               language={language}
               navigate="ImageWordScreen"
               image={portraitImage}
               text="Imagens"
+              color="#2D48BA"
             />
           </View>
         </View>

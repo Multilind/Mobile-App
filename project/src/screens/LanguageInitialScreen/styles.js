@@ -17,7 +17,15 @@ const styles = StyleSheet.create({
     left: 15,
   },
   dictChildren: {
-    marginBottom: 16,
+    marginBottom: 48,
+    backgroundColor: 'rgba(1, 105, 73, 0.10)',
+    borderWidth: 2,
+    borderColor: '#016949'
+  },
+  imageChildren: {
+    backgroundColor: 'rgba(45, 72, 186, 0.10)',
+    borderWidth: 2,
+    borderColor: '#2D48BA'
   },
   Dict: {
     width: '90%',

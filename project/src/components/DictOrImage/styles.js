@@ -3,20 +3,22 @@ import { MONTSERRAT_SEMIBOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   dictionary: {
-    height: 150,
+    height: 170,
     width: '100%',
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     borderRadius: 15,
     paddingHorizontal: 20,
+    paddingTop: 20,
     borderWidth: 2,
     borderColor: '#E0E0E0',
+  },
+  description: {
+    marginTop: 20,
+    maxWidth: 300,
   },
   flexview: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between'
   },
   img: {
     width: 72,
@@ -24,7 +26,6 @@ const styles = StyleSheet.create({
   },
   buttontext: {
     color: 'black',
-    paddingLeft: '8%',
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 24,
   },
