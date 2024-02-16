@@ -56,8 +56,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  iconmodal: {
+  iconModal: {
     left: 5,
+    color: '#016949'
   },
   textmodal: {
     fontSize: 16,
@@ -68,6 +69,11 @@ const styles = StyleSheet.create({
   filter: {
     top: '60%',
     left: '80%',
+  },
+  arrowIcon: {
+    right: 10,
+    rotate: '-90deg',
+    color: '#016949'
   },
   filtericon: {},
 });

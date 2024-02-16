@@ -5,6 +5,7 @@ import {
   FontAwesome5,
   AntDesign,
   FontAwesome,
+  Octicons
 } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -156,8 +157,7 @@ export function LanguageScreen() {
                 <FontAwesome5
                   name="sort-alpha-down"
                   size={30}
-                  color="black"
-                  style={{ left: 5 }}
+                  style={styles.iconModal}
                 />
                 <Text style={styles.textmodal}>
                   Listar por nome (crescente)
@@ -173,28 +173,10 @@ export function LanguageScreen() {
                 <FontAwesome5
                   name="sort-alpha-down-alt"
                   size={30}
-                  color="black"
-                  style={styles.iconmodal}
+                  style={styles.iconModal}
                 />
                 <Text style={styles.textmodal}>
                   Listar por nome (decrescente)
-                </Text>
-              </Pressable>
-              <Pressable
-                style={styles.flex}
-                onPress={() => {
-                  listOrdenadaTronco();
-                  setVisib(false);
-                }}
-              >
-                <Entypo
-                  name="flow-tree"
-                  size={30}
-                  color="black"
-                  style={{ left: 5 }}
-                />
-                <Text style={styles.textmodal}>
-                  Listar por tronco linguistico
                 </Text>
               </Pressable>
             </View>
@@ -220,7 +202,6 @@ export function LanguageScreen() {
                 <Entypo
                   name="magnifying-glass"
                   size={30}
-                  color={DARK_GRAY}
                   style={{ left: 10 }}
                 />
               </View>
@@ -233,15 +214,15 @@ export function LanguageScreen() {
               setVisib(true);
             }}
           >
-            <FontAwesome
-              name="filter"
+            <Octicons
+              name="arrow-switch"
               size={24}
               color={DARK_GRAY}
-              style={{ right: 10 }}
+              style={[styles.arrowIcon, { transform: [{ rotate: '-90deg' }] }]}
             />
           </TouchableOpacity>
         </View>
-        <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" firstView={listLanguages()} secondView={listFamilies()} />
+        <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" firstView={<ScrollView>{listLanguages()}</ScrollView>} secondView={<ScrollView>{listFamilies()}</ScrollView>} />
       </View>
     </>
   );
