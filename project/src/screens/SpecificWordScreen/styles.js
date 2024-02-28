@@ -9,9 +9,11 @@ const styles = StyleSheet.create({
     paddingRight: 14,
   },
   container: {
-    height: 70,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 24
   },
   info: {
     display: 'flex',
@@ -95,6 +97,13 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     elevation: 1,
+  },
+  containerImage: {
+    marginBottom: 50,
+  },
+  containerImage2: {
+    width: '50%',
+    marginLeft: '1.5%',
   },
   filtericon: {},
 });

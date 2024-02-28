@@ -13,7 +13,7 @@ export const GoBack = ({ style }) => {
         navigation.goBack(null);
       }}
     >
-      <AntDesign name="left" size={24} color="#B1B1B1" />
+      <AntDesign name="left" size={24} color="#C0C0C0" />
     </TouchableOpacity>
   );
 };

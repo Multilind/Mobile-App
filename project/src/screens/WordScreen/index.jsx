@@ -31,7 +31,6 @@ export function WordsScreen() {
   // }, []);
 
   const filteredWords = FilterListSearchWord(words, wordSearch);
-  console.log(sortName(filteredWords));
 
   return (
     <SafeAreaView style={{backgroundColor: 'white'}}>
@@ -60,7 +59,6 @@ export function WordsScreen() {
         }
         data={sortName(filteredWords)}
         renderItem={({ item }) => <Word word={item} />}
-        keyExtractor={(item) => String(item.id_palavra)}
       />
     </SafeAreaView>
   );

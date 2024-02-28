@@ -22,6 +22,25 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: MONTSERRAT_SEMIBOLD,
   },
+  familyLanguages: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '90%'
+  },
+  bubble: {
+    height: 34,
+    backgroundColor: '#04B47F',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 80,
+    borderRadius: 16,
+    marginRight: 8
+  },
+  qtdLinguas: {
+    color: 'white',
+  },
   arrow: {
     paddingRight: 14,
   },
@@ -72,7 +91,6 @@ const styles = StyleSheet.create({
   },
   arrowIcon: {
     right: 10,
-    rotate: '-90deg',
     color: '#016949'
   },
   filtericon: {},

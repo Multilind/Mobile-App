@@ -17,8 +17,8 @@ export function SpecificImageScreen() {
   const insets = useSafeAreaInsets();
   const route = useRoute();
   const { content } = Images;
-  const word = route.params?.word;
   const [images, setImages] = useState(content);
+  const word = route.params?.word;
   const [loading, setLoading] = useState(true);
 
   // useEffect(() => {

@@ -56,17 +56,19 @@ export function LanguageScreen() {
 
   const listFamilies = () =>
     FilterListSearch(listFamily, familySearch).map((tronco, index) => (
-      <View key={tronco.id_tronco} style={styles.listcontainer}>
+      <View key={tronco.id_tronco}>
         <TouchableOpacity
           style={styles.list}
           onPress={() => setExpanded(expanded === index ? null : index)}
         >
-          <View style={styles.familyLinguas}>
+          <View style={styles.familyLanguages}>
             <Text style={styles.textlist}>{tronco.nome}</Text>
             {tronco.linguas.length > 0 && (
-              <Text style={styles.qtdLinguas}>
-                {`${tronco.linguas.length} línguas`}
-              </Text>
+              <View style={styles.bubble}>
+                <Text style={styles.qtdLinguas}>
+                  {`${tronco.linguas.length} línguas`}
+                </Text>
+              </View>
             )}
           </View>
           {tronco.linguas.length > 0 && (
@@ -81,7 +83,7 @@ export function LanguageScreen() {
 
         {expanded === index &&
           tronco.linguas?.map((language) => (
-            <View key={language.id} style={styles.listcontainer}>
+            <View style={styles.listcontainer}>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('LanguageInitial', { language });
