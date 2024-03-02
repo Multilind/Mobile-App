@@ -48,6 +48,7 @@ export function Input({
           onBlur={() => setFocused(false)}
           placeholder="Pesquisar um local"
           onChangeText={updateSearch}
+          placeholderTextColor={'#838383'}
           ref={textInput}
           style={[combinedStyles.input, inputStyle]}
           {...props}

@@ -33,6 +33,7 @@ export function LanguageScreen() {
   const [listFamily, setListLanguage] = useState(languagesPerFamily);
   const [familySearch, setFamilySearch] = useState('');
   const [expanded, setExpanded] = useState(false);
+  const [placeholder, setPlaceholder] = useState('Pesquisar Língua');
 
   const listLanguages = () =>
     lista.map((language) => (
@@ -102,6 +103,14 @@ export function LanguageScreen() {
           ))}
       </View>
     ));
+
+  const handleTabChange = (index) => {
+    if (index === 0) {
+      setPlaceholder("Pesquisar Língua");
+    } else if (index === 1) {
+      setPlaceholder("Pesquisar Família Línguística");
+    }
+  };
 
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
@@ -209,7 +218,7 @@ export function LanguageScreen() {
               </View>
             }
             inputContainerStyle={[styles.searchBar]}
-            placeholder="Pesquisar língua"
+            placeholder={placeholder}
           />
           <TouchableOpacity
             onPress={() => {
@@ -224,7 +233,7 @@ export function LanguageScreen() {
             />
           </TouchableOpacity>
         </View>
-        <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" firstView={<ScrollView>{listLanguages()}</ScrollView>} secondView={<ScrollView>{listFamilies()}</ScrollView>} />
+        <Tab firstTitle="Línguas" secondTitle="Famílias Linguísticas" firstView={<ScrollView>{listLanguages()}</ScrollView>} secondView={<ScrollView>{listFamilies()}</ScrollView>} onTabChange={handleTabChange} />
       </View>
     </>
   );

@@ -83,21 +83,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: 5,
   },
-  buttonadd: {
-    marginVertical: 5,
-    width: 70,
-    backgroundColor: 'white',
-    marginTop: 650,
-    marginLeft: 290,
-    position: 'absolute',
-    shadowColor: '#FFF',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 1,
-    elevation: 1,
-  },
   containerImage: {
     marginBottom: 50,
   },

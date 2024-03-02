@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     paddingTop: 18,
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomColor: '#E3E3E3',
+    borderBottomWidth: 2
   },
   textBar: {
     fontFamily: MONTSERRAT_BOLD,

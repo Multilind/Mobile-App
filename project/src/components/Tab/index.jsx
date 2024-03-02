@@ -3,7 +3,7 @@ import { View, Text, Dimensions } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import styles from './styles';
 
-export function Tab({ firstTitle, secondTitle, firstView, secondView }) {
+export function Tab({ firstTitle, secondTitle, firstView, secondView, onTabChange }) {
     const FirstRoute = () => (
         <View>
             {firstView}
@@ -40,12 +40,17 @@ export function Tab({ firstTitle, secondTitle, firstView, secondView }) {
         second: SecondRoute,
     });
 
+    const handleIndexChange = newIndex => {
+        setIndex(newIndex);
+        onTabChange(newIndex);
+    };
+
     return (
         <TabView
             renderTabBar={renderTabBar}
             navigationState={{ index, routes }}
             renderScene={renderScene}
-            onIndexChange={setIndex}
+            onIndexChange={handleIndexChange}
             style={styles.tabView}
         />
     );

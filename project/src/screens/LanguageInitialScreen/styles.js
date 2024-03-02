@@ -2,14 +2,15 @@ import { StyleSheet } from 'react-native';
 import { MONTSERRAT_BOLD } from '../../constants';
 
 const styles = StyleSheet.create({
+  content: {
+    height: '100%',
+    backgroundColor: 'white'
+  },
   container: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  LanguageInfo: {
-    marginTop: 10,
   },
   goback: {
     position: 'absolute',
@@ -40,26 +41,6 @@ const styles = StyleSheet.create({
   buttonscontainer: {
     top: 80,
     width: '90%',
-  },
-
-  plusbutton: {
-    marginTop: '9%',
-    marginLeft: '80%',
-    width: 43,
-    height: 43,
-    borderRadius: 43 / 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-
-    elevation: 10,
   },
 });
 

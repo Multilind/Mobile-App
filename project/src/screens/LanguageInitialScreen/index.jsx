@@ -12,34 +12,36 @@ export function LanguageInitialScreen() {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <GoBack />
-        <TopBar>{language.nome}</TopBar>
-        <View style={styles.container}>
-          <LanguageInfo language={language} style={styles.LanguageInfo} />
-
-          <View style={styles.Dict}>
-            <DictOrImage
-              style={styles.dictChildren}
-              language={language}
-              image={dictionaryImage}
-              navigate="Words"
-              text="Dicionário"
-              color="#016949"
-            />
-
-            <DictOrImage
-              style={styles.imageChildren}
-              language={language}
-              navigate="ImageWordScreen"
-              image={portraitImage}
-              text="Imagens"
-              color="#2D48BA"
-            />
-          </View>
+    <View style={styles.content}>
+      <SafeAreaView>
+        <View>
+          <GoBack />
+          <TopBar>{language.nome}</TopBar>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+          <View style={styles.container}>
+            <LanguageInfo language={language} />
+
+            <View style={styles.Dict}>
+              <DictOrImage
+                style={styles.dictChildren}
+                language={language}
+                image={dictionaryImage}
+                navigate="Words"
+                text="Dicionário"
+                color="#016949"
+              />
+
+              <DictOrImage
+                style={styles.imageChildren}
+                language={language}
+                navigate="ImageWordScreen"
+                image={portraitImage}
+                text="Imagens"
+                color="#2D48BA"
+              />
+            </View>
+          </View>
+      </SafeAreaView>
+    </View>
   );
 }
