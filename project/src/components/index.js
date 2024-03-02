@@ -11,3 +11,4 @@ export { LoadingOrEmptyMessage } from './LoadingOrEmptyMessage';
 export { Loading } from './Loading';
 export { InfoCard } from './CardInfo';
 export { Tab } from './Tab';
+export { OnBoarding } from './OnBoarding';
