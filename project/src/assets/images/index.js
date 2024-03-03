@@ -4,6 +4,7 @@ export { default as contributionImage } from './equality.png';
 export { default as guideImage } from './process.png';
 export { default as databaseImage } from './query.png';
 export { default as contributorImage } from './teamwork.png';
+export { default as stepZero } from './passo0.png';
 export { default as stepOne } from './passo1.png';
 export { default as stepTwo } from './passo2.png';
 export { default as stepThree } from './passo3.png';

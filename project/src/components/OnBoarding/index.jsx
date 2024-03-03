@@ -1,20 +1,36 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { View, Text, StatusBar, TouchableOpacity, FlatList, Dimensions, useColorScheme } from 'react-native'
+import { View, Text, StatusBar, TouchableOpacity, FlatList, Dimensions, useColorScheme, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesignIcons from 'react-native-vector-icons/AntDesign';
+import { stepZero, stepOne, stepTwo, stepThree, stepFour } from '../../assets/images';
 
-export function OnBoarding({ data, buttonBackgroundColor = '', dotBackgroundColor = '', onFinish, buttonIconColor = '' }) {
+export function OnBoarding({ buttonBackgroundColor = '', dotBackgroundColor = '', onFinish, buttonIconColor = '' }) {
+  const data = [
+    {
+      _id: '0',
+      image: <Image source={stepZero} />
+    },
+    {
+      _id: '1',
+      image: <Image source={stepOne} />
+    },
+    {
+      _id: '2',
+      image: <Image source={stepTwo} />
+    },
+    {
+      _id: '3',
+      image: <Image source={stepThree} />
+    },
+    {
+      _id: '4',
+      image: <Image source={stepFour} />
+    },
+  ]
 
   const { width, height } = Dimensions.get('window');
 
   const colorScheme = useColorScheme()
-
-  const COLORS = {
-    primary: buttonBackgroundColor ? buttonBackgroundColor : "red",
-    background: colorScheme == 'dark' ? '#171717' : "#FFFFFF",
-    text: colorScheme == 'dark' ? '#FFFF' : "#171717",
-    dotBgColor: dotBackgroundColor ? dotBackgroundColor : "red"
-  }
 
   const SIZES = {
     base: 10,
@@ -45,17 +61,6 @@ export function OnBoarding({ data, buttonBackgroundColor = '', dotBackgroundColo
     flatlistRef.current.scrollToIndex({
       animated: true,
       index: currentPage + 1
-    })
-  }
-
-  const handleBack = () => {
-    if (currentPage == 0) {
-      return;
-    }
-
-    flatlistRef.current.scrollToIndex({
-      animated: true,
-      index: currentPage - 1
     })
   }
 
@@ -140,11 +145,9 @@ export function OnBoarding({ data, buttonBackgroundColor = '', dotBackgroundColo
                   fontSize: 18,
                   marginLeft: SIZES.base
                 }}>Finalizar</Text>
-                <AntDesignIcons name="right"
-                  style={{ fontSize: 18, color: 'white', opacity: 0.3, marginLeft: SIZES.base }} />
                 <AntDesignIcons
                   name="right"
-                  style={{ fontSize: 25, color: 'white', marginLeft: -15 }}
+                  style={{ fontSize: 25, color: 'white'}}
                 />
               </TouchableOpacity>
             )
@@ -160,14 +163,15 @@ export function OnBoarding({ data, buttonBackgroundColor = '', dotBackgroundColo
       <View style={{
         width: SIZES.width,
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         height: '100%'
       }}
       >
         <View style={{
           alignItems: 'center',
-          marginVertical: SIZES.base * 2
+          // width: '100%'
+          // marginVertical: SIZES.base * 2
         }}>
           {item.image}
         </View>
