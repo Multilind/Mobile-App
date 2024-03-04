@@ -11,7 +11,6 @@ import {
 } from '../../components';
 import styles from './styles';
 import Images from '../../images.json'
-// import { ImageWordService } from '../../services';
 
 export function SpecificImageScreen() {
   const insets = useSafeAreaInsets();
@@ -20,17 +19,6 @@ export function SpecificImageScreen() {
   const [images, setImages] = useState(content);
   const word = route.params?.word;
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   async function getImages() {
-  //     const imagesResponse = await ImageWordService.getImageWords(
-  //       word.id_palavra
-  //     );
-  //     setLoading(false);
-  //     setImages(imagesResponse);
-  //   }
-  //   getImages();
-  // }, []);
 
   const list = () =>
     images.map((image, index) => (

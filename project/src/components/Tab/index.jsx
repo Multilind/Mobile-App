@@ -42,7 +42,8 @@ export function Tab({ firstTitle, secondTitle, firstView, secondView, onTabChang
 
     const handleIndexChange = newIndex => {
         setIndex(newIndex);
-        onTabChange(newIndex);
+        if (onTabChange)
+            onTabChange(newIndex);
     };
 
     return (

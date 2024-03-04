@@ -36,14 +36,16 @@ export function SettingsScreen() {
         <InfoCard
           styles={styles.infoCard}
           image={databaseImage}
-          navigate="Words"
+          navigate="AboutScreen"
           text="Base de Dados Utilizadas"
+          screenType="database"
         />
         <InfoCard
           styles={styles.infoCard}
           image={contributorImage}
-          navigate="Words"
+          navigate="AboutScreen"
           text="Contribuidores"
+          screenType="contributor"
         />
       </View>
     </SafeAreaView>

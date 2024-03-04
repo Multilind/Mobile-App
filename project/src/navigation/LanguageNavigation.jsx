@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LanguageScreen, LanguageInitialScreen, WordsScreen, SpecificWordScreen, SpecificImageScreen, ImageWordScreen } from '../screens';
+import { LanguageScreen, LanguageInitialScreen, WordsScreen, SpecificWordScreen, SpecificImageScreen, ImageWordScreen, AboutScreen } from '../screens';
 
 const Stack = createStackNavigator();
 

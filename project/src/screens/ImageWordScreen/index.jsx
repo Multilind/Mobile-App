@@ -21,32 +21,6 @@ export function ImageWordScreen() {
   const [page, setpage] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  // async function getWords() {
-  //   const response = await WordService.getAllWordsPerPage({
-  //     idLingua: language.id_lingua,
-  //     page,
-  //     rowsPerPage: perPage,
-  //   });
-
-  //   const palavrasResponse = response.rows[0].palavras;
-  //   const wordsFound = await Promise.all(
-  //     palavrasResponse.map(async (wordImage) => {
-  //       const image = await ImageWordService.getImageWords(
-  //         wordImage.id_palavra
-  //       );
-  //       if (image.length) {
-  //         wordImage.url = image[0].download_url;
-  //       }
-  //       return wordImage;
-  //     })
-  //   );
-  //   setLoading(false);
-  //   setWords([...words, ...wordsFound]);
-  // }
-  // useEffect(() => {
-  //   getWords();
-  // }, [page]);
-
   const fetchMore = () => {
     setpage(page + 1);
   };
@@ -66,7 +40,7 @@ export function ImageWordScreen() {
           <LoadingOrEmptyMessage
             loading={loading}
             isEmpty={words?.length === 0}
-            emptyMessage={`Ainda não há imagens da língua ${language.name} :(`}
+            emptyMessage={`Ainda não há imagens da língua ${language.nome} :(`}
           />
         }
         data={words.filter((item) => item.url)}

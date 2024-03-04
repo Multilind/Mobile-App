@@ -2,20 +2,14 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  ScrollView,
+  Linking,
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 import { GoBack, TopBar, WordMeaning } from '../../components';
-import {
-  SCREEN_HEIGHT,
-  MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-} from '../../constants';
 import Images from '../../images.json'
 import { Tab, ImageContainer } from '../../components';
 
@@ -27,6 +21,11 @@ export function SpecificWordScreen() {
   const { content } = Images;
   const [images, setImages] = useState(content);
   const [loading, setLoading] = useState(false);
+
+  const handleReportErrorPress = () => {
+    Linking.openURL('https://www.decadalinguasindigenasbr.com/materiais/');
+  };
+
 
   const listImages = () => {
     if (loading) {
@@ -70,6 +69,9 @@ export function SpecificWordScreen() {
           o português falado pelos povos indígenas, sendo diferente do
           português formal e do português brasileiro tendo em vista a
           forte influência da língua materna dos povos originais.</Text>
+        <TouchableOpacity onPress={handleReportErrorPress}>
+          <Text>Reportar Erro</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
 

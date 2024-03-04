@@ -6,3 +6,4 @@ export { WordsScreen } from './WordScreen';
 export { SpecificWordScreen } from './SpecificWordScreen';
 export { SpecificImageScreen } from './SpecificImageScreen'
 export { ImageWordScreen } from './ImageWordScreen'
+export { AboutScreen } from './AboutScreen'

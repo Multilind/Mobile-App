@@ -4,6 +4,7 @@ import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { MapScreen, SettingsScreen } from '../screens';
 import { PRIMARY_BLUE, DARK } from '../constants';
 import { LanguageNavigation } from './LanguageNavigation';
+import { SettingsNavigation } from './SettingsNavigation'
 
 const Tab = createBottomTabNavigator();
 export const BOTTOM_TAB_HEIGHT = 100;
@@ -48,7 +49,7 @@ export function BottomNavigation() {
             <Ionicons name="information-circle" size={30} color={color} />
           ),
         }}
-        component={SettingsScreen}
+        component={SettingsNavigation}
       />
     </Tab.Navigator>
   );
