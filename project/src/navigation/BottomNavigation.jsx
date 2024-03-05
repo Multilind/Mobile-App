@@ -12,6 +12,7 @@ export const BOTTOM_TAB_HEIGHT = 100;
 export function BottomNavigation() {
   return (
     <Tab.Navigator
+      initialRouteName="LanguageNavigator"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: PRIMARY_BLUE,
