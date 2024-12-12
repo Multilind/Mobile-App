@@ -1,6 +1,6 @@
 import apiContent from './api';
 
-const url = '/idioma';
+const url = '/idiomas';
 
 export class IdiomService {
   static async getAllIdioms() {

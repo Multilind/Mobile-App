@@ -1,6 +1,6 @@
 import apiContent from './api';
 
-const url = '/lingua';
+const url = '/linguas';
 
 export class LanguageService {
   static async getAllLanguages() {

@@ -2,7 +2,7 @@
 // import { get } from 'react-native/Libraries/Utilities/PixelRatio';
 import api from './api';
 
-const url = '/dialeto';
+const url = '/dialetos';
 
 export class DialetoService {
   static async getAllDialetos(query) {

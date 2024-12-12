@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLanguage } from '../../contexts';
@@ -18,8 +18,13 @@ export function LanguageScreen() {
   const [listLanguage, setListLanguage] = useState(languages);
   const [languageSearch, setLanguageSearch] = useState('');
   const [visib, setVisib] = useState(false);
+  const [filteredList, setFilteredList] = useState([])
 
-  const filteredList = FilterListSearch(listLanguage, languageSearch);
+  useEffect(() => {
+    console.log(languages);
+    setFilteredList(languages);
+  }), [languages];
+
   return (
     <SafeAreaView>
       <ModalMod
@@ -44,7 +49,7 @@ export function LanguageScreen() {
             <View style={styles.loadingOrEmptyContainer}>
               <LoadingOrEmptyMessage
                 loading={loadingLanguages}
-                isEmpty={languages?.length === 0 || filteredList.length === 0}
+                isEmpty={!loadingLanguages && (languages?.length === 0 || filteredList.length === 0)}
                 emptyMessage={
                   filteredList.length === 0 && languageSearch.length !== 0
                     ? 'Não há resultados para busca'

@@ -1,6 +1,6 @@
 import api from './api';
 
-const url = '/tronco';
+const url = '/familias';
 
 export class FamilyService {
   static async getAllFamilies() {

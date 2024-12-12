@@ -1,9 +1,12 @@
 import Constants from 'expo-constants';
 
+const releaseChannel =
+    Constants.expoConfig?.releaseChannel || Constants.manifest2?.extra?.releaseChannel || 'default';
+
 const ENV = {
   dev: {
     development: true,
-    contentServer: `http://192.168.0.88:8000`,
+    contentServer: `http://192.168.15.63:8000`,
     imagesServer: `http://192.168.0.88:5000`,
   },
   staging: {
@@ -34,4 +37,4 @@ function getEnvVars(env = '') {
   return ENV.dev;
 }
 
-export default getEnvVars(Constants.manifest.releaseChannel);
+export default getEnvVars(releaseChannel);

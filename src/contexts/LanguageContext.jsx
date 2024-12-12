@@ -10,8 +10,8 @@ export function LanguageContextProvider({ children }) {
 
   async function getAllLanguages() {
     const response = await LanguageService.getAllLanguages();
-    setLoadingLanguages(false);
     setLanguages(sortName(response));
+    setLoadingLanguages(false);
   }
 
   useEffect(() => {
